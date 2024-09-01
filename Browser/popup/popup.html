@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../style/style.css" />
     <title>SecureX Extension</title>
+    <link rel="stylesheet" href="../style/style.css" />
   </head>
   <body>
     <div id="extension-container">
@@ -13,15 +13,54 @@
           <img src="../shield.jpg" alt="Logo" class="logo" />
           <span class="title">SecureX</span>
         </div>
-        <img
-          src="path/to/your/close-icon.png"
-          alt="Close"
-          class="close-icon"
-          onclick="closeExtension()"
-        />
       </header>
+      <div class="safety-container">
+        <!-- Safe version -->
+        <div class="safety-info safe">
+          <img src="../safe.jpg" alt="Safe" class="safety-logo" />
+          <div class="safety-text">
+            <h2 class="safety-heading">Safe Website</h2>
+            <p class="safety-description">
+              This website has been verified as safe and secure.
+            </p>
+          </div>
+        </div>
+        <!-- Unsafe version (commented out for now) -->
+        <!-- 
+        <div class="safety-info unsafe">
+          <img src="path/to/unsafe-logo.png" alt="Unsafe" class="safety-logo" />
+          <div class="safety-text">
+            <h2 class="safety-heading">Unsafe Website</h2>
+            <p class="safety-description">
+              This website may pose security risks. Proceed with caution.
+            </p>
+          </div>
+        </div> -->
+      </div>
+      <div class="scan-history-container">
+        <h2 class="scan-history-heading">Scan History</h2>
+        <div class="scan-history-list">
+            <div class="scan-history-item">
+                <div class="scan-url">https://example.com</div>
+                <div class="scan-status safe">Safe</div>
+                <div class="scan-date-time">
+                    <span class="scan-date">2023-05-01</span>
+                    <span class="scan-time">12:21am</span>
+                </div>
+            </div>
+            <div class="scan-history-item">
+                <div class="scan-url">https://unsafesite.com</div>
+                <div class="scan-status unsafe">Unsafe</div>
+                <div class="scan-date-time">
+                    <span class="scan-date">2023-05-02</span>
+                    <span class="scan-time">3:45pm</span>
+                </div>
+            </div>
+
+      <!-- Add your additional extension content here -->
     </div>
+    
+
     <script src="../scripts/content.js"></script>
-    <script src = "../scripts/background.js"></script>
   </body>
 </html>
