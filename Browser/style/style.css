@@ -4,35 +4,125 @@ html {
   padding: 0;
   font-family: Arial, sans-serif;
 }
+
 #extension-container {
   width: 350px;
   height: 450px;
   overflow: hidden;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
 header {
   background-color: black;
-  height: 30px;
+  height: 20px;
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
+
 .logo-container {
   display: flex;
   align-items: center;
 }
+
 .logo {
   width: 24px;
   height: 24px;
   margin-right: 8px;
 }
+
 .title {
   color: white;
   font-size: 18px;
 }
-.close-icon {
-  width: 24px;
-  height: 24px;
-  cursor: pointer;
+
+.safety-container {
+  padding: 20px;
+}
+
+.safety-info {
+  display: flex;
+  align-items: flex-start;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.safety-logo {
+  width: 40px;
+  height: 40px;
+  margin-right: 16px;
+}
+
+.safety-text {
+  flex-grow: 1;
+}
+
+.safety-heading {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+}
+
+.safety-description {
+  margin: 0;
+  font-size: 14px;
+}
+
+.safety-info.unsafe .safety-heading {
+  color: red;
+}
+
+.scan-history-container {
+  padding: 0px 20px 20px 20px;
+}
+
+.scan-history-heading {
+  font-size: 20px;
+  color: black;
+  margin: 0 0 16px 0;
+}
+
+.scan-history-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.scan-history-item {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.scan-url {
+  width: 60%;
+  font-size: 16px;
+  word-break: break-all;
+}
+
+.scan-status {
+  width: 40%;
+  font-size: 20px;
+  text-align: right;
+  font-weight: semi-bold;
+}
+
+.scan-status.safe {
+  color: green;
+}
+
+.scan-status.unsafe {
+  color: red;
+}
+
+.scan-date-time {
+  width: 100%;
+  margin-top: 4px;
+  font-size: 14px;
+  color: gray;
+}
+
+.scan-date {
+  margin-right: 8px;
 }
