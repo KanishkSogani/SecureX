@@ -1,21 +1,29 @@
 {
-    "manifest_version": 3,
-    "name" : "SecureX",
-    "description": "SecureX is a browser extension that helps you to secure your browsing experience.",
-    "version": "1.0",
-    "permissions" :["webRequest", "webRequestBlocking", "storage", "tabs", "activeTab", "notifications", "scripting"],
-    "host_permissions": ["<all_urls>"],
-    "background": {
-        "service_worker": "background.js"
-    },
-    "content_scripts": [
-        {
-            "matches": ["<all_urls>"],
-            "js": ["scripts/content.js"],
-            "run_at": "document_start"
-        }
-    ],
-    "action": {
-        "default_popup": "popup.html"
+  "manifest_version": 3,
+  "name": "SecureX",
+  "description": "SecureX is a browser extension that helps you to secure your browsing experience.",
+  "version": "1.0",
+  "permissions": [
+    "webRequest",
+    "storage",
+    "tabs",
+    "activeTab",
+    "notifications",
+    "scripting"
+  ],
+  "host_permissions": ["<all_urls>"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["scripts/content.js"],
+      "run_at": "document_start"
     }
+  ],
+  "action": {
+    "default_popup": "../popup/popup.html",
+    "default_logo": "logo.png"
+  },
+  "icons": {
+    "128": "logo.png"
+  }
 }
