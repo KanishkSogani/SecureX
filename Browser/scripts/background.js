@@ -44,7 +44,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         //   };
             
              sendResponse({ isPhishing: false });
-        // }
+        }
       })
       .catch((error) => {
         console.log("Error : ", error);
