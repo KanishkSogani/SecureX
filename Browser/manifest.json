@@ -12,6 +12,9 @@
     "scripting"
   ],
   "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
   "content_scripts": [
     {
       "matches": ["<all_urls>"],
@@ -25,5 +28,12 @@
   },
   "icons": {
     "128": "logo.png"
-  }
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+  },
+  "web_accessible_resources": [{
+    "resources": ["tfjs/tf.min.js", "model.tflite"],
+    "matches": ["<all_urls>"]
+  }]
 }

@@ -1,10 +1,13 @@
 function checkCurrentURL() {
   const url = window.location.href;
-  console.log(url);
+  
+  chrome.runtime.sendMessage({ type: "CHECK_URL", url: url }, (response) => {
+    console.log(response)
+    if(response.isPhishing) {
+        console.log("Phishing detected!");
+    }else {
+        console.log("No phishing detected!");
+    }
+  });
 }
-
-function closeExtension() {
-  console.log("Extension closed");
-}
-
 checkCurrentURL();
