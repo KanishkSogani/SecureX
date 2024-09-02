@@ -13,7 +13,7 @@
   ],
   "host_permissions": ["<all_urls>"],
   "background": {
-    "service_worker": "scripts/background.js"
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
@@ -23,17 +23,19 @@
     }
   ],
   "action": {
-    "default_popup": "../popup/popup.html",
-    "default_logo": "logo.png"
+    "default_popup": "popup/popup.html",
+    "default_icon": "logo.png"
   },
   "icons": {
     "128": "logo.png"
   },
   "content_security_policy": {
-    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self'"
+    "extension_pages": "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';"
   },
-  "web_accessible_resources": [{
-    "resources": ["tfjs/tf.min.js", "model.tflite"],
-    "matches": ["<all_urls>"]
-  }]
+  "web_accessible_resources": [
+    {
+      "resources": ["lib/tf.min.js", "lib/my_model.tflite", "lib/axios.min.js", "worker/subworkers.js", "worker/mlWorker.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
 }
